@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>孕期指南 — 准妈妈的贴心手册</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-brand">孕期指南</div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">首页</a></li>
+      <li><a href="#weekly">每周变化</a></li>
+      <li><a href="#trimester">分期指南</a></li>
+      <li><a href="#nutrition">饮食营养</a></li>
+      <li><a href="#tips">注意事项</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- 首页 Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>准妈妈的<br>孕期贴心手册</h1>
+      <p>了解宝宝每周的成长变化，掌握科学的饮食与护理知识</p>
+      <a href="#weekly" class="btn">开始探索</a>
+    </div>
+    <div class="hero-graphic">
+      <div class="baby-size-circle">
+        <span class="size-emoji">&#127793;</span>
+        <span class="size-text">生命的奇迹</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 宝宝每周大小变化 -->
+  <section id="weekly" class="section weekly-section">
+    <div class="container">
+      <h2 class="section-title">宝宝每周大小变化</h2>
+      <p class="section-subtitle">从一粒芝麻到一个西瓜，见证生命的奇迹</p>
+
+      <div class="trimester-tabs">
+        <button class="tab-btn active" data-tab="t1-weeks">孕早期 (1-12周)</button>
+        <button class="tab-btn" data-tab="t2-weeks">孕中期 (13-27周)</button>
+        <button class="tab-btn" data-tab="t3-weeks">孕晚期 (28-40周)</button>
+      </div>
+
+      <div class="week-grid" id="week-grid">
+        <!-- JS 动态生成 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 分期指南 -->
+  <section id="trimester" class="section trimester-section">
+    <div class="container">
+      <h2 class="section-title">孕期分期指南</h2>
+      <p class="section-subtitle">每个阶段都有不同的重点</p>
+
+      <div class="trimester-cards">
+        <!-- 孕早期 -->
+        <div class="tri-card tri-1">
+          <div class="tri-header">
+            <div class="tri-icon">&#128134;</div>
+            <h3>孕早期</h3>
+            <span class="tri-weeks">第1-12周</span>
+          </div>
+          <div class="tri-body">
+            <div class="tri-info">
+              <h4>宝宝发育</h4>
+              <p>从受精卵到胎儿，心脏开始跳动，各器官逐步形成，到12周末身长约9cm。</p>
+            </div>
+            <div class="tri-info">
+              <h4>妈妈变化</h4>
+              <p>可能出现恶心呕吐、疲劳嗜睡、乳房胀痛、尿频等症状。</p>
+            </div>
+            <div class="tri-info">
+              <h4>重要检查</h4>
+              <ul>
+                <li>确认宫内妊娠（6-8周B超）</li>
+                <li>NT检查（11-13周）</li>
+                <li>早期唐氏筛查</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 孕中期 -->
+        <div class="tri-card tri-2">
+          <div class="tri-header">
+            <div class="tri-icon">&#128150;</div>
+            <h3>孕中期</h3>
+            <span class="tri-weeks">第13-27周</span>
+          </div>
+          <div class="tri-body">
+            <div class="tri-info">
+              <h4>宝宝发育</h4>
+              <p>宝宝快速生长，开始有胎动，能听到声音，皮肤逐渐变为不透明，各器官进一步成熟。</p>
+            </div>
+            <div class="tri-info">
+              <h4>妈妈变化</h4>
+              <p>早孕反应消退，腹部明显隆起，感受到胎动，精力恢复，食欲增加。</p>
+            </div>
+            <div class="tri-info">
+              <h4>重要检查</h4>
+              <ul>
+                <li>唐氏筛查或无创DNA（15-20周）</li>
+                <li>大排畸彩超（20-24周）</li>
+                <li>糖耐量检测（24-28周）</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 孕晚期 -->
+        <div class="tri-card tri-3">
+          <div class="tri-header">
+            <div class="tri-icon">&#127752;</div>
+            <h3>孕晚期</h3>
+            <span class="tri-weeks">第28-40周</span>
+          </div>
+          <div class="tri-body">
+            <div class="tri-info">
+              <h4>宝宝发育</h4>
+              <p>宝宝肺部成熟，皮下脂肪增加，身体变得更加圆润，为出生做最后准备。</p>
+            </div>
+            <div class="tri-info">
+              <h4>妈妈变化</h4>
+              <p>腹部明显增大，可能出现腰背痛、水肿、尿频加重、假性宫缩等。</p>
+            </div>
+            <div class="tri-info">
+              <h4>重要检查</h4>
+              <ul>
+                <li>胎心监护（32周起）</li>
+                <li>B超评估胎儿大小和胎位</li>
+                <li>骨盆测量</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 饮食营养 -->
+  <section id="nutrition" class="section nutrition-section">
+    <div class="container">
+      <h2 class="section-title">饮食营养指南</h2>
+      <p class="section-subtitle">科学饮食，为宝宝提供最好的营养</p>
+
+      <div class="nutrition-tabs">
+        <button class="nut-tab active" data-nut="nut1">孕早期</button>
+        <button class="nut-tab" data-nut="nut2">孕中期</button>
+        <button class="nut-tab" data-nut="nut3">孕晚期</button>
+      </div>
+
+      <div class="nutrition-content" id="nutrition-content">
+        <!-- JS 动态生成 -->
+      </div>
+
+      <!-- 禁忌食物 -->
+      <div class="avoid-section">
+        <h3>&#9888;&#65039; 孕期应避免的食物</h3>
+        <div class="avoid-grid">
+          <div class="avoid-item">
+            <div class="avoid-icon">&#127861;</div>
+            <h4>酒精</h4>
+            <p>任何含酒精饮品都应避免，可能导致胎儿酒精综合征</p>
+          </div>
+          <div class="avoid-item">
+            <div class="avoid-icon">&#127843;</div>
+            <h4>生食海鲜</h4>
+            <p>生鱼片、生蚝等可能含有寄生虫和细菌</p>
+          </div>
+          <div class="avoid-item">
+            <div class="avoid-icon">&#129379;</div>
+            <h4>未煮熟的肉类</h4>
+            <p>可能含有弓形虫，需确保肉类完全煮熟</p>
+          </div>
+          <div class="avoid-item">
+            <div class="avoid-icon">&#129472;</div>
+            <h4>高汞鱼类</h4>
+            <p>鲨鱼、旗鱼、金枪鱼等大型鱼类汞含量较高</p>
+          </div>
+          <div class="avoid-item">
+            <div class="avoid-icon">&#127856;</div>
+            <h4>未消毒乳制品</h4>
+            <p>未经巴氏消毒的牛奶和奶酪可能含有李斯特菌</p>
+          </div>
+          <div class="avoid-item">
+            <div class="avoid-icon">&#9749;</div>
+            <h4>过量咖啡因</h4>
+            <p>每日咖啡因摄入不超过200mg（约1杯咖啡）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 注意事项 -->
+  <section id="tips" class="section tips-section">
+    <div class="container">
+      <h2 class="section-title">孕期注意事项</h2>
+      <p class="section-subtitle">呵护自己，就是呵护宝宝</p>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">&#128170;</div>
+          <h3>适度运动</h3>
+          <p>散步、孕妇瑜伽、游泳等低强度运动有助于控制体重、缓解不适、促进顺产。避免剧烈运动和高风险活动。</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">&#128164;</div>
+          <h3>充足睡眠</h3>
+          <p>孕中晚期建议左侧卧位睡眠，有助于改善子宫血流。每天保证7-9小时睡眠，午间可适当小憩。</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">&#128138;</div>
+          <h3>补充叶酸</h3>
+          <p>孕前3个月至孕后3个月每天补充400-800微克叶酸，预防胎儿神经管畸形。整个孕期也建议持续补充。</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">&#128137;</div>
+          <h3>定期产检</h3>
+          <p>按时进行产前检查，整个孕期约需检查11-13次。高危孕妇需增加检查次数。有异常及时就医。</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">&#128151;</div>
+          <h3>心理健康</h3>
+          <p>孕期激素变化可能导致情绪波动，保持心情愉悦很重要。与家人沟通、适当放松、必要时寻求专业帮助。</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">&#9888;&#65039;</div>
+          <h3>远离有害物质</h3>
+          <p>远离烟酒、二手烟、辐射源、化学清洁剂。用药前务必咨询医生，不要自行服用任何药物。</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">&#129528;</div>
+          <h3>口腔护理</h3>
+          <p>孕期激素变化易引发牙龈炎，坚持早晚刷牙、饭后漱口。孕中期是治疗口腔疾病的最佳时期。</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">&#127860;</div>
+          <h3>体重管理</h3>
+          <p>整个孕期体重增长建议10-12.5kg。孕早期增长1-2kg，孕中晚期每周增长约0.3-0.5kg。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p>孕期指南 — 为准妈妈提供科学、贴心的孕期知识</p>
+      <p class="footer-note">本指南仅供参考，具体请遵医嘱</p>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-top" id="backTop" title="回到顶部">&#8593;</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
