@@ -13,7 +13,7 @@
     <ul class="nav-links">
       <li><a href="#hero" class="active">首页</a></li>
       <li><a href="#weekly">每周变化</a></li>
-      <li><a href="#trimester">分期指南</a></li>
+      <li><a href="#weekly-guide">每周指南</a></li>
       <li><a href="#nutrition">饮食营养</a></li>
       <li><a href="#tips">注意事项</a></li>
     </ul>
@@ -55,93 +55,20 @@
     </div>
   </section>
 
-  <!-- 分期指南 -->
-  <section id="trimester" class="section trimester-section">
+  <!-- 每周指南 -->
+  <section id="weekly-guide" class="section weekly-guide-section">
     <div class="container">
-      <h2 class="section-title">孕期分期指南</h2>
-      <p class="section-subtitle">每个阶段都有不同的重点</p>
+      <h2 class="section-title">孕期每周指南</h2>
+      <p class="section-subtitle">每周的检查项目与妈妈的身体变化</p>
 
-      <div class="trimester-cards">
-        <!-- 孕早期 -->
-        <div class="tri-card tri-1">
-          <div class="tri-header">
-            <div class="tri-icon">&#128134;</div>
-            <h3>孕早期</h3>
-            <span class="tri-weeks">第1-12周</span>
-          </div>
-          <div class="tri-body">
-            <div class="tri-info">
-              <h4>宝宝发育</h4>
-              <p>从受精卵到胎儿，心脏开始跳动，各器官逐步形成，到12周末身长约9cm。</p>
-            </div>
-            <div class="tri-info">
-              <h4>妈妈变化</h4>
-              <p>可能出现恶心呕吐、疲劳嗜睡、乳房胀痛、尿频等症状。</p>
-            </div>
-            <div class="tri-info">
-              <h4>重要检查</h4>
-              <ul>
-                <li>确认宫内妊娠（6-8周B超）</li>
-                <li>NT检查（11-13周）</li>
-                <li>早期唐氏筛查</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="guide-tabs">
+        <button class="guide-tab active" data-guide="g1">孕早期 (1-12周)</button>
+        <button class="guide-tab" data-guide="g2">孕中期 (13-27周)</button>
+        <button class="guide-tab" data-guide="g3">孕晚期 (28-40周)</button>
+      </div>
 
-        <!-- 孕中期 -->
-        <div class="tri-card tri-2">
-          <div class="tri-header">
-            <div class="tri-icon">&#128150;</div>
-            <h3>孕中期</h3>
-            <span class="tri-weeks">第13-27周</span>
-          </div>
-          <div class="tri-body">
-            <div class="tri-info">
-              <h4>宝宝发育</h4>
-              <p>宝宝快速生长，开始有胎动，能听到声音，皮肤逐渐变为不透明，各器官进一步成熟。</p>
-            </div>
-            <div class="tri-info">
-              <h4>妈妈变化</h4>
-              <p>早孕反应消退，腹部明显隆起，感受到胎动，精力恢复，食欲增加。</p>
-            </div>
-            <div class="tri-info">
-              <h4>重要检查</h4>
-              <ul>
-                <li>唐氏筛查或无创DNA（15-20周）</li>
-                <li>大排畸彩超（20-24周）</li>
-                <li>糖耐量检测（24-28周）</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 孕晚期 -->
-        <div class="tri-card tri-3">
-          <div class="tri-header">
-            <div class="tri-icon">&#127752;</div>
-            <h3>孕晚期</h3>
-            <span class="tri-weeks">第28-40周</span>
-          </div>
-          <div class="tri-body">
-            <div class="tri-info">
-              <h4>宝宝发育</h4>
-              <p>宝宝肺部成熟，皮下脂肪增加，身体变得更加圆润，为出生做最后准备。</p>
-            </div>
-            <div class="tri-info">
-              <h4>妈妈变化</h4>
-              <p>腹部明显增大，可能出现腰背痛、水肿、尿频加重、假性宫缩等。</p>
-            </div>
-            <div class="tri-info">
-              <h4>重要检查</h4>
-              <ul>
-                <li>胎心监护（32周起）</li>
-                <li>B超评估胎儿大小和胎位</li>
-                <li>骨盆测量</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="guide-timeline" id="guide-timeline">
+        <!-- JS 动态生成 -->
       </div>
     </div>
   </section>

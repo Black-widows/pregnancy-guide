@@ -1,3 +1,114 @@
+// ===== SVG 宝宝插画生成 =====
+function generateBabySVG(week) {
+  // 根据孕周生成不同发育阶段的宝宝SVG
+  const t = week / 40; // 0~1 发育进度
+
+  if (week <= 3) {
+    // 受精卵/细胞团阶段
+    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="12" fill="#FFD6E0" stroke="#FF8BA7" stroke-width="1.5"/>
+      <circle cx="46" cy="47" r="3" fill="#FF8BA7" opacity="0.6"/>
+      <circle cx="54" cy="47" r="3" fill="#FF8BA7" opacity="0.6"/>
+      <circle cx="50" cy="53" r="3" fill="#FF8BA7" opacity="0.4"/>
+      <circle cx="50" cy="50" r="20" fill="none" stroke="#FFD6E0" stroke-width="0.8" stroke-dasharray="3,3"/>
+    </svg>`;
+  }
+  if (week <= 5) {
+    // 胚胎早期 - 芝麻大小
+    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="50" rx="14" ry="10" fill="#FFD6E0" stroke="#FF8BA7" stroke-width="1.2"/>
+      <path d="M42 50 Q50 42 58 50" fill="none" stroke="#FF8BA7" stroke-width="1" opacity="0.5"/>
+      <circle cx="47" cy="48" r="1.5" fill="#FF8BA7" opacity="0.7"/>
+      <circle cx="53" cy="48" r="1.5" fill="#FF8BA7" opacity="0.7"/>
+      <line x1="50" y1="55" x2="50" y2="65" stroke="#FF8BA7" stroke-width="1" opacity="0.4"/>
+    </svg>`;
+  }
+  if (week <= 8) {
+    // 胚胎期 - 有初步形态
+    const s = 16 + week;
+    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="42" rx="${s}" ry="${s - 4}" fill="#FFD6E0" stroke="#FF8BA7" stroke-width="1.2"/>
+      <circle cx="44" cy="39" r="2.5" fill="#FF8BA7" opacity="0.6"/>
+      <circle cx="56" cy="39" r="2.5" fill="#FF8BA7" opacity="0.6"/>
+      <path d="M46 46 Q50 49 54 46" fill="none" stroke="#FF8BA7" stroke-width="1" opacity="0.5"/>
+      <path d="M38 52 Q32 60 28 68" fill="none" stroke="#FF8BA7" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+      <path d="M62 52 Q68 60 72 68" fill="none" stroke="#FF8BA7" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+      <path d="M44 55 Q42 65 40 72" fill="none" stroke="#FF8BA7" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+      <path d="M56 55 Q58 65 60 72" fill="none" stroke="#FF8BA7" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+    </svg>`;
+  }
+  if (week <= 12) {
+    // 胎儿早期 - 初具人形
+    const headR = 18 - (week - 8) * 0.5;
+    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="38" rx="${headR}" ry="${headR}" fill="#FFD6E0" stroke="#FF8BA7" stroke-width="1.2"/>
+      <circle cx="44" cy="35" r="2" fill="#FF8BA7" opacity="0.7"/>
+      <circle cx="56" cy="35" r="2" fill="#FF8BA7" opacity="0.7"/>
+      <path d="M46 42 Q50 45 54 42" fill="none" stroke="#FF8BA7" stroke-width="0.8" opacity="0.5"/>
+      <path d="M50 54 L50 70" stroke="#FF8BA7" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <path d="M50 58 L38 52" stroke="#FF8BA7" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      <path d="M50 58 L62 52" stroke="#FF8BA7" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      <path d="M50 70 L42 82" stroke="#FF8BA7" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      <path d="M50 70 L58 82" stroke="#FF8BA7" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      <ellipse cx="50" cy="62" rx="10" ry="12" fill="none" stroke="#FFD6E0" stroke-width="1" opacity="0.4"/>
+    </svg>`;
+  }
+  if (week <= 20) {
+    // 胎儿中期 - 身体比例逐渐协调
+    const bodyW = 14 + (week - 12) * 0.8;
+    const headR = 14;
+    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="30" rx="${headR}" ry="${headR}" fill="#FFD6E0" stroke="#FF8BA7" stroke-width="1.2"/>
+      <circle cx="44" cy="27" r="2.5" fill="#FF8BA7" opacity="0.7"/>
+      <circle cx="56" cy="27" r="2.5" fill="#FF8BA7" opacity="0.7"/>
+      <path d="M45 34 Q50 37 55 34" fill="none" stroke="#FF8BA7" stroke-width="0.8" opacity="0.5"/>
+      <path d="M42 26 Q40 24 38 25" fill="none" stroke="#FF8BA7" stroke-width="0.8" opacity="0.4"/>
+      <path d="M58 26 Q60 24 62 25" fill="none" stroke="#FF8BA7" stroke-width="0.8" opacity="0.4"/>
+      <ellipse cx="50" cy="55" rx="${bodyW}" ry="20" fill="#FFD6E0" stroke="#FF8BA7" stroke-width="1" opacity="0.8"/>
+      <path d="M38 50 L28 42" stroke="#FF8BA7" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+      <path d="M62 50 L72 42" stroke="#FF8BA7" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+      <path d="M44 70 L38 85" stroke="#FF8BA7" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+      <path d="M56 70 L62 85" stroke="#FF8BA7" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+      <path d="M38 55 Q30 55 28 48" fill="none" stroke="#FF8BA7" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+      <path d="M62 55 Q70 55 72 48" fill="none" stroke="#FF8BA7" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+    </svg>`;
+  }
+  if (week <= 30) {
+    // 胎儿中后期 - 圆润
+    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="28" rx="14" ry="14" fill="#FFD6E0" stroke="#FF8BA7" stroke-width="1.2"/>
+      <circle cx="44" cy="25" r="2.5" fill="#FF8BA7" opacity="0.7"/>
+      <circle cx="56" cy="25" r="2.5" fill="#FF8BA7" opacity="0.7"/>
+      <path d="M45 32 Q50 35 55 32" fill="none" stroke="#FF8BA7" stroke-width="0.8" opacity="0.5"/>
+      <path d="M42 24 Q40 22 38 23" fill="none" stroke="#FF8BA7" stroke-width="0.8" opacity="0.4"/>
+      <path d="M58 24 Q60 22 62 23" fill="none" stroke="#FF8BA7" stroke-width="0.8" opacity="0.4"/>
+      <ellipse cx="50" cy="55" rx="20" ry="24" fill="#FFD6E0" stroke="#FF8BA7" stroke-width="1" opacity="0.8"/>
+      <path d="M34 48 L22 38" stroke="#FF8BA7" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+      <path d="M66 48 L78 38" stroke="#FF8BA7" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+      <path d="M42 74 L36 90" stroke="#FF8BA7" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+      <path d="M58 74 L64 90" stroke="#FF8BA7" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
+      <ellipse cx="50" cy="55" rx="20" ry="24" fill="none" stroke="#FFD6E0" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.3"/>
+    </svg>`;
+  }
+  // 胎儿晚期 - 接近新生儿
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="26" rx="15" ry="15" fill="#FFD6E0" stroke="#FF8BA7" stroke-width="1.2"/>
+    <path d="M35 26 Q50 12 65 26" fill="#F0D0D8" stroke="none" opacity="0.3"/>
+    <circle cx="43" cy="23" r="2.5" fill="#FF8BA7" opacity="0.7"/>
+    <circle cx="57" cy="23" r="2.5" fill="#FF8BA7" opacity="0.7"/>
+    <path d="M45 31 Q50 34 55 31" fill="none" stroke="#FF8BA7" stroke-width="1" opacity="0.5"/>
+    <path d="M41 22 Q39 20 37 21" fill="none" stroke="#FF8BA7" stroke-width="0.8" opacity="0.4"/>
+    <path d="M59 22 Q61 20 63 21" fill="none" stroke="#FF8BA7" stroke-width="0.8" opacity="0.4"/>
+    <ellipse cx="50" cy="58" rx="22" ry="26" fill="#FFD6E0" stroke="#FF8BA7" stroke-width="1" opacity="0.8"/>
+    <path d="M32 50 L18 38" stroke="#FF8BA7" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+    <path d="M68 50 L82 38" stroke="#FF8BA7" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+    <path d="M40 78 L34 94" stroke="#FF8BA7" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+    <path d="M60 78 L66 94" stroke="#FF8BA7" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+    <path d="M36 52 Q28 54 24 48" fill="none" stroke="#FF8BA7" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+    <path d="M64 52 Q72 54 76 48" fill="none" stroke="#FF8BA7" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  </svg>`;
+}
+
 // ===== 宝宝每周大小数据 =====
 const weeklyData = [
   // 孕早期
@@ -127,6 +238,50 @@ const nutritionData = {
   }
 };
 
+// ===== 每周指南数据 =====
+const weeklyGuideData = {
+  1: { mom: ['月经周期开始计算孕期', '身体尚无明显变化', '开始注意补充叶酸'], check: ['确认月经周期', '开始服用叶酸（400-800微克/天）'] },
+  2: { mom: ['排卵期前后', '可能有轻微腹部不适', '保持良好作息'], check: ['继续补充叶酸', '如计划怀孕，可开始监测排卵'] },
+  3: { mom: ['受精卵着床', '可能有少量着床出血', '乳房开始变得敏感'], check: ['继续补充叶酸', '避免剧烈运动'] },
+  4: { mom: ['月经推迟，可验孕', '乳房胀痛加重', '开始出现疲劳感'], check: ['验孕确认（血HCG）', '开始建立孕期档案'] },
+  5: { mom: ['恶心呕吐开始出现', '尿频明显', '情绪波动增大'], check: ['血HCG和孕酮检测', 'B超确认宫内妊娠'] },
+  6: { mom: ['晨吐加重', '嗅觉变得敏感', '容易疲劳嗜睡'], check: ['第一次B超：确认胎心胎芽', '血常规检查'] },
+  7: { mom: ['恶心持续', '食欲变化明显', '唾液增多'], check: ['继续观察', '如有出血及时就医'] },
+  8: { mom: ['子宫增大如橙子', '腹部轻微隆起', '可能有便秘'], check: ['尿常规检查', '肝功能检查'] },
+  9: { mom: ['恶心可能达到高峰', '腹部略有膨胀', '乳房持续增大'], check: ['血型检测（ABO+Rh）', '传染病筛查'] },
+  10: { mom: ['恶心开始缓解', '精力逐渐恢复', '腰围开始增大'], check: ['血常规复查', '甲状腺功能检查'] },
+  11: { mom: ['早孕反应减轻', '情绪趋于稳定', '皮肤可能变暗沉'], check: ['预约NT检查', '心电图检查'] },
+  12: { mom: ['子宫如拳头大小', '腹部隆起更明显', '精力明显恢复'], check: ['NT检查（11-13+6周）', '早期唐氏筛查', 'B超测量胎儿颈项透明层'] },
+  13: { mom: ['进入孕中期', '恶心基本消失', '食欲恢复增加'], check: ['无创DNA（如需要）', '常规产检'] },
+  14: { mom: ['精力充沛', '腹部明显隆起', '可能出现鼻塞'], check: ['常规产检：血压、体重、宫高', '尿常规'] },
+  15: { mom: ['可能感受到第一次胎动', '皮肤色素沉着', '头发变浓密'], check: ['中期唐氏筛查（15-20周）', '血常规'] },
+  16: { mom: ['胎动逐渐明显', '腹部快速增大', '可能出现腰背痛'], check: ['产检常规项目', 'B超（如需要）'] },
+  17: { mom: ['胎动更频繁', '韧带拉伸引起腹痛', '可能有静脉曲张'], check: ['常规产检', '血压监测'] },
+  18: { mom: ['食欲大增', '体重增长加快', '可能出现腿抽筋'], check: ['产检常规项目', '补充钙剂'] },
+  19: { mom: ['腹部明显突出', '皮肤瘙痒', '可能有色素沉着'], check: ['常规产检', '预约大排畸'] },
+  20: { mom: ['孕期过半', '胎动规律化', '子宫底平脐'], check: ['大排畸彩超（20-24周）', '详细检查胎儿各器官'] },
+  21: { mom: ['可能出现妊娠纹', '脚部水肿开始', '呼吸略感急促'], check: ['常规产检', '尿常规'] },
+  22: { mom: ['腹部持续增大', '韧带疼痛加重', '可能有胃灼热'], check: ['产检常规项目', '血压体重监测'] },
+  23: { mom: ['胎动更有力', '可能出现痔疮', '手脚水肿'], check: ['常规产检', '血常规'] },
+  24: { mom: ['子宫如足球大小', '腰背疼痛加重', '皮肤拉伸瘙痒'], check: ['糖耐量检测（OGTT，24-28周）', '血常规'] },
+  25: { mom: ['呼吸更加困难', '可能出现腕管综合征', '情绪波动'], check: ['常规产检', '尿常规'] },
+  26: { mom: ['腹部沉重感', '睡眠质量下降', '频繁起夜'], check: ['产检常规项目', 'B超评估胎儿发育'] },
+  27: { mom: ['孕中期最后一周', '可能出现假性宫缩', '水肿加重'], check: ['常规产检', '复查血常规'] },
+  28: { mom: ['进入孕晚期', '子宫底在脐上', '呼吸更费力'], check: ['开始每两周产检一次', '乙肝抗体检测', '开始胎动计数'] },
+  29: { mom: ['胎动更加活跃', '胃部受压感', '可能出现耻骨疼痛'], check: ['常规产检', '尿常规'] },
+  30: { mom: ['腹部很大', '行动不便', '可能有便秘加重'], check: ['B超评估胎位和大小', '血常规'] },
+  31: { mom: ['可能有不规律宫缩', '乳房可能分泌初乳', '腰背痛加剧'], check: ['常规产检', '胎心监护（如需要）'] },
+  32: { mom: ['子宫底达到最高点', '呼吸最困难时期', '严重尿频'], check: ['胎心监护开始', 'B超评估胎位', 'GBS筛查准备'] },
+  33: { mom: ['胎儿入盆（初产妇）', '呼吸稍有改善', '膀胱压力增大'], check: ['胎心监护', '常规产检'] },
+  34: { mom: ['腹部有下坠感', '可能有少量乳汁分泌', '疲劳感加重'], check: ['胎心监护', 'B超评估胎儿体重'] },
+  35: { mom: ['胎儿下降感明显', '骨盆压迫感', '行动更加不便'], check: ['胎心监护', '产检：评估分娩方式'] },
+  36: { mom: ['胎儿入盆（经产妇）', '宫缩可能更频繁', '精力下降'], check: ['每周产检开始', '胎心监护', 'B超评估胎位和大小'] },
+  37: { mom: ['随时可能分娩', '宫缩不规律', '可能有"见红"'], check: ['胎心监护', '产检：评估宫颈条件', 'GBS（B族链球菌）筛查'] },
+  38: { mom: ['胎儿完全成熟', '行动非常不便', '可能出现产前焦虑'], check: ['胎心监护', '产检：确认分娩计划'] },
+  39: { mom: ['随时待产', '宫缩可能加重', '可能有破水'], check: ['胎心监护', '产检：评估是否需要催产'] },
+  40: { mom: ['预产期', '密切关注胎动', '准备待产包'], check: ['胎心监护', '产检：评估是否需要催产', '如超过41周需住院观察'] },
+};
+
 // ===== 分类标记 =====
 function getWeekTrimester(week) {
   if (week <= 12) return 0;
@@ -140,6 +295,50 @@ const tabMap = {
   't3-weeks': 2,
 };
 
+const guideTabMap = {
+  'g1': 0,
+  'g2': 1,
+  'g3': 2,
+};
+
+// ===== 渲染每周指南 =====
+function renderGuide(trimesterIndex) {
+  const timeline = document.getElementById('guide-timeline');
+  const startWeek = trimesterIndex * 13 + 1;
+  const endWeek = Math.min(startWeek + 11 + (trimesterIndex === 2 ? 1 : 0), 40);
+  const badgeClass = trimesterIndex === 0 ? 'badge-t1' : trimesterIndex === 1 ? 'badge-t2' : 'badge-t3';
+  const badgeText = trimesterIndex === 0 ? '孕早期' : trimesterIndex === 1 ? '孕中期' : '孕晚期';
+
+  let html = '';
+  for (let w = startWeek; w <= endWeek; w++) {
+    const data = weeklyGuideData[w];
+    if (!data) continue;
+    html += `
+      <div class="guide-week">
+        <div class="guide-week-left">
+          <div class="guide-week-num">第${w}周</div>
+        </div>
+        <div class="guide-week-content">
+          <div class="guide-week-title">
+            第${w}周
+            <span class="week-badge ${badgeClass}">${badgeText}</span>
+          </div>
+          <div class="guide-columns">
+            <div class="guide-col col-mom">
+              <h4>👩 妈妈的变化</h4>
+              <ul>${data.mom.map(m => `<li>${m}</li>`).join('')}</ul>
+            </div>
+            <div class="guide-col col-check">
+              <h4>🏥 检查项目</h4>
+              <ul>${data.check.map(c => `<li>${c}</li>`).join('')}</ul>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+  timeline.innerHTML = html;
+}
+
 // ===== 渲染周卡 =====
 function renderWeeks(trimesterIndex) {
   const grid = document.getElementById('week-grid');
@@ -147,7 +346,7 @@ function renderWeeks(trimesterIndex) {
   grid.innerHTML = filtered.map(w => `
     <div class="week-card">
       <div class="week-header">
-        <div class="week-emoji">${w.emoji}</div>
+        <div class="baby-svg-wrap">${generateBabySVG(w.week)}</div>
         <div class="week-info">
           <h3>${w.name}</h3>
           <span class="week-size">约 ${w.size}</span>
@@ -187,6 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 默认渲染
   renderWeeks(0);
   renderNutrition('nut1');
+  renderGuide(0);
 
   // 周卡 Tab 切换
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -203,6 +403,15 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.nut-tab').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       renderNutrition(btn.dataset.nut);
+    });
+  });
+
+  // 每周指南 Tab 切换
+  document.querySelectorAll('.guide-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.guide-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGuide(guideTabMap[btn.dataset.guide]);
     });
   });
 
