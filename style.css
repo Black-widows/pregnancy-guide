@@ -452,6 +452,70 @@ ul { list-style: none; }
   height: 100%;
 }
 
+/* ===== 胎教指南 ===== */
+.edu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.edu-tab {
+  padding: 10px 24px;
+  border: 2px solid var(--border);
+  background: var(--card);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  color: var(--text-light);
+}
+
+.edu-tab:hover { border-color: #9C27B0; color: #9C27B0; }
+.edu-tab.active { background: #9C27B0; border-color: #9C27B0; color: #fff; }
+
+.edu-content {
+  border-left: 3px solid #CE93D8;
+}
+
+.edu-sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.edu-section h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #7B1FA2;
+}
+
+.edu-section ul {
+  padding-left: 0;
+}
+
+.edu-section li {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  padding-left: 16px;
+  position: relative;
+}
+
+.edu-section li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #CE93D8;
+}
+
 /* ===== 饮食营养 ===== */
 .nutrition-tabs {
   display: flex;
@@ -737,6 +801,10 @@ ul { list-style: none; }
   }
 
   .guide-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-sections {
     grid-template-columns: 1fr;
   }
 
